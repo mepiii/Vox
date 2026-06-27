@@ -1,0 +1,12 @@
+// Purpose: Animated premium landing hero.
+// Callers: Landing page.
+// Deps: Framer Motion, Next Link.
+// API: Hero component.
+// Side effects: None.
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+export function Hero() {
+  return <section className="relative mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.05fr_.95fr] lg:py-28"><motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: .7, ease: [0.16, 1, 0.3, 1] }} className="max-w-3xl"><p className="mb-5 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">AI transcripts, synced subtitles, clean exports</p><h1 className="font-display text-5xl font-semibold leading-[1.02] tracking-[-.05em] text-white md:text-7xl">Turn speech into text instantly.</h1><p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Upload audio or video and let Vox generate clean transcripts, synced subtitles, summaries, and export-ready files.</p><div className="mt-9 flex flex-wrap gap-4"><Link href="/upload" className="rounded-full bg-cyan-300 px-6 py-3 font-semibold text-slate-950 shadow-lg shadow-cyan-950/40">Start Transcribing</Link><a href="#demo" className="rounded-full border border-white/12 px-6 py-3 font-semibold text-white hover:bg-white/8">View Demo</a></div></motion.div><motion.div initial={{ opacity: 0, scale: .96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: .8, delay: .15 }} className="panel relative overflow-hidden rounded-[2rem] p-5"><div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-cyan-300/20 blur-3xl" /><div className="rounded-3xl bg-slate-950/70 p-4"><div className="mb-4 h-52 rounded-2xl bg-[radial-gradient(circle_at_50%_35%,oklch(70%_.15_215/.28),transparent_30%),oklch(16%_.04_268)] p-5"><div className="wave flex h-full items-center justify-center gap-2">{Array.from({ length: 34 }, (_, i) => <span key={i} className="w-1 rounded-full bg-cyan-200" style={{ height: 18 + (i % 9) * 10 }} />)}</div></div><div className="space-y-3 text-sm text-slate-300"><p className="rounded-2xl bg-white/[.06] p-4"><b className="text-white">00:04</b> Vox generates subtitles that stay locked to every spoken moment.</p><p className="rounded-2xl bg-cyan-300/10 p-4 text-cyan-50">Ready: transcript.txt · captions.srt · captions.vtt</p></div></div></motion.div></section>;
+}
